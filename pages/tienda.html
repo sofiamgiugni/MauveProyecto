@@ -1,187 +1,169 @@
-<!-- HTML: es para armar la estructura de la página web. Cada elemento es un bloque o algo que le da informacion extra al bloque--> 
-<!-- Cada cosa que ponemos en html es un elemento. Cada elemento es un tag etiqueta, porque lo que hacen es etiquetar el contenido-->
- <!-- Cada etiqueta que se abre se tiene que cerrar. se cierran con / por ejemplo <div> </div>-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/tienda.css">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Mauve - Shop</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/tienda.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Mauve - Shop</title>
 </head>
 <body>
   
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <h1>MAUVE</h1>
+      <p class="tagline">BREAK THE MOLD</p>
+    </div>
+    <nav> 
+      <ul>
+        <li><a href="./tienda.html">Home</a></li>
+        <li><a href="./explorar.html">Explorar</a></li>
+        <li><a href="./productos.html">Productos</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <input type="text" class="search" placeholder="Buscar...">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-user"></i></a>
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </header>
 
+  <!-- PRODUCTOS DESTACADOS -->
+  <section id="productos-destacados">
+    <h2>PRODUCTOS DESTACADOS</h2>
+    <div class="productos">
 
-<!-- HEADER -->
-<header>
-  <div class="logo">
-    <h1>MAUVE</h1>
-    <p class="tagline">BREAK THE MOLD</p>
-  </div>
-  <nav> 
-    <ul>
-      <li><a href="./tienda.html">Home</a></li>
-      <li><a href="./explorar.html">Explorar</a></li>
-      <li><a href="./productos.html">Productos</a></li>
-    </ul>
-  </nav>
-  <div class="icons">
-    <input type="text" class="search" placeholder="Buscar...">
-    <a href="#"><i class="fas fa-search"></i></a>
-    <a href="#"><i class="fas fa-user"></i></a>
-    <a href="#"><i class="fas fa-shopping-cart"></i></a>
-  </div>
-</header>
-
-
-    <!-- PRODUCTOS DESTACADOS -->
-    <section id="productos-destacados">
-        <h2>PRODUCTOS DESTACADOS</h2>
-
-        <div class="productos">
-
-            <div class="producto">
-                <div class="imagen">
-                <img src="../assets/d9c9c9195903742c97e8f68514f45d39.jpg" alt="Chaqueta de cuero sintetico negra">
-            </div>
-                <p>CHAQUETA DE CUERO<br>$95000</p>
-                <button>+</button>
-            </div>
-
-            <div class="producto">
-                <div class="imagen">
-                <img src="../assets/c7cdaa4fc36201fad4664b2dee70608a.jpg" alt="Blusa corset morado y celeste con buelos">
-            </div>
-                <p>CORSET CONI<br>$25000</p>
-                <button>+</button>
-            </div>
-
-            <div class="producto">
-                 <div class="imagen">
-                <img src="../assets/71cb1a39b9c073a199660e8fd22ded19.jpg" alt="Jean estampado de vaca con brillos">
-            </div>
-                <p>JEAN ROMA<br>$35000</p>
-                <button>+</button>
-            </div>
-
-            <div class="producto">
-                <div class="imagen">
-                <img src="../assets/a0a79840c06dfeee266656b2238b8473.jpg" alt="Botas taco aguja simil arrugadas">
-            </div>
-                <p>BOTAS LOLI<br>$78000</p>
-                <button>+</button>
-            </div>
-
-            <div class="producto">
-                <div class="imagen">
-                <img src="../assets/91e2a3953c372698df0ef6e3bc0d3ed0.jpg" alt="Botas taco aguja simil arrugadas">
-            </div>
-                <p>TOP TARA<br>$20000</p>
-                <button>+</button>
-            </div>
-
-            <div class="producto">
-                <div class="imagen">
-                <img src="../assets/4b08d30502d1cf6f9369edc1aab3bb54.jpg" alt="Botas largas simil cuero rojas">
-            </div>
-                <p>BOTAS BLOOD<br>$70000</p>
-                <button>+</button>
-            </div>
-
+      <div class="producto">
+        <div class="imagen">
+          <img src="../assets/d9c9c9195903742c97e8f68514f45d39.jpg" alt="Chaqueta de cuero sintético negra">
         </div>
-    </section>
+        <p>CHAQUETA DE CUERO<br>$95.000</p>
+        <button>+</button>
+      </div>
 
+      <div class="producto">
+        <div class="imagen">
+          <img src="../assets/c7cdaa4fc36201fad4664b2dee70608a.jpg" alt="Corset morado y celeste con vuelos">
+        </div>
+        <p>CORSET CONI<br>$25.000</p>
+        <button>+</button>
+      </div>
 
- <!-- CATEGORÍAS -->
-<section id="categorias">
-  <h2>CATEGORÍAS</h2>
-  <div class="categorias">
-    <a href="zapatos.html" class="card">
+      <div class="producto">
+        <div class="imagen">
+          <img src="../assets/71cb1a39b9c073a199660e8fd22ded19.jpg" alt="Jean estampado animal print vaca con brillos">
+        </div>
+        <p>JEAN ROMA<br>$35.000</p>
+        <button>+</button>
+      </div>
+
+      <div class="producto">
+        <div class="imagen">
+          <img src="../assets/a0a79840c06dfeee266656b2238b8473.jpg" alt="Botas negras de taco aguja arrugadas">
+        </div>
+        <p>BOTAS LOLI<br>$78.000</p>
+        <button>+</button>
+      </div>
+
+      <div class="producto">
+        <div class="imagen">
+          <img src="../assets/91e2a3953c372698df0ef6e3bc0d3ed0.jpg" alt="Top de tirantes con brillos">
+        </div>
+        <p>TOP TARA<br>$20.000</p>
+        <button>+</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section id="categorias">
+    <h2>CATEGORÍAS</h2>
+    <div class="categorias">
+
+      <a href="zapatos.html" class="card">
         <span class="card-text">ZAPATOS</span>
         <div class="card-img" style="background-image: url('../assets/3.png');"></div>
-    </a>
-
-    <a href= "accesorios.html" class="card">
-      <span class="card-text">ACCESORIOS</span>
-      <div class="card-img" style="background-image: url('../assets/2.png');"></div>
-    </a>
-
-    <a href= "vestidos.html" class="card">
-      <span class="card-text">VESTIDOS</span>
-      <div class="card-img" style="background-image: url('../assets/4.png');"></div>
-    </a>
-
-    <a href= "abrigos.html" class="card">
-      <span class="card-text">ABRIGOS</span>
-      <div class="card-img" style="background-image: url('../assets/5.png');"></div>
-    </a>
-
-    <a href= "tops.html" class="card">
-      <span class="card-text">TOPS</span>
-      <div class="card-img" style="background-image: url('../assets/6.png');"></div>
-    </a>
-
-    <a href= "polleras.html" class="card">
-      <span class="card-text">POLLERAS</span>
-      <div class="card-img" style="background-image: url('../assets/1.png');"></div>
-    </a>
-
-    <a href="shorts.html" class="card">
-      <span class="card-text">SHORTS</span>
-      <div class="card-img" style="background-image: url('../assets/6a67ce87fabeca2cd5064085b47e8ce7.jpg');"></div>
       </a>
 
-    <a href= "corsets.hmtl" class="card">
-      <span class="card-text">CORSETS</span>
-      <div class="card-img" style="background-image: url('../assets/9a966214a8facc087702fffa6e1ea275.jpg');"></div>
-    </a>
+      <a href="accesorios.html" class="card">
+        <span class="card-text">ACCESORIOS</span>
+        <div class="card-img" style="background-image: url('../assets/2.png');"></div>
+      </a>
 
-    <a href= "camisas.html"class="card">
-      <span class="card-text">CAMISAS</span>
-      <div class="card-img" style="background-image: url('../assets/b1e89fe75ab965b57c04d9f76e2a90db.jpg');"></div>
-    </a>
+      <a href="vestidos.html" class="card">
+        <span class="card-text">VESTIDOS</span>
+        <div class="card-img" style="background-image: url('../assets/4.png');"></div>
+      </a>
 
-    <a href="tejidos.html" class="card">
-      <span class="card-text">TEJIDOS</span>
-      <div class="card-img" style="background-image: url('../assets/750d8396fadb895bfe0e642dda047ea7.jpg');"></div>
-    </a>
+      <a href="abrigos.html" class="card">
+        <span class="card-text">ABRIGOS</span>
+        <div class="card-img" style="background-image: url('../assets/5.png');"></div>
+      </a>
 
-    <a href= "buzos" class="card">
-      <span class="card-text">BUZOS</span>
-      <div class="card-img" style="background-image: url('../assets/212f5490b7f3c8b69811becf2621f719.jpg');"></div>
-    </a>
+      <a href="tops.html" class="card">
+        <span class="card-text">TOPS</span>
+        <div class="card-img" style="background-image: url('../assets/6.png');"></div>
+      </a>
 
-    <a href="bolsos.html" class="card">
-      <span class="card-text">BOLSOS</span>
-      <div class="card-img" style="background-image: url('../assets/d68c3377afa5e0fd9db07006f1c0237a.jpg');"></div>
-    </a>
-    
-    
+      <a href="polleras.html" class="card">
+        <span class="card-text">POLLERAS</span>
+        <div class="card-img" style="background-image: url('../assets/1.png');"></div>
+      </a>
 
-  </div>
-</section>
+      <a href="shorts.html" class="card">
+        <span class="card-text">SHORTS</span>
+        <div class="card-img" style="background-image: url('../assets/6a67ce87fabeca2cd5064085b47e8ce7.jpg');"></div>
+      </a>
 
+      <a href="corsets.html" class="card">
+        <span class="card-text">CORSETS</span>
+        <div class="card-img" style="background-image: url('../assets/9a966214a8facc087702fffa6e1ea275.jpg');"></div>
+      </a>
 
-    <!-- FOOTER -->
-    <footer>
-  <div class="marca">MV</div>
+      <a href="camisas.html" class="card">
+        <span class="card-text">CAMISAS</span>
+        <div class="card-img" style="background-image: url('../assets/b1e89fe75ab965b57c04d9f76e2a90db.jpg');"></div>
+      </a>
 
-  <div class="links">
-  <ul>
-    <li><a href="./faq.html">Preguntas Frecuentes</a></li>
-    <li><a href="./contacto.html">Contacto</a></li>
-  </ul>
-</div>
+      <a href="tejidos.html" class="card">
+        <span class="card-text">TEJIDOS</span>
+        <div class="card-img" style="background-image: url('../assets/750d8396fadb895bfe0e642dda047ea7.jpg');"></div>
+      </a>
 
-  <div class="redes">
-    <a href="#"><i class="fab fa-whatsapp"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-youtube"></i></a>
-  </div>
-</footer>
-<div>
+      <a href="buzos.html" class="card">
+        <span class="card-text">BUZOS</span>
+        <div class="card-img" style="background-image: url('../assets/212f5490b7f3c8b69811becf2621f719.jpg');"></div>
+      </a>
+
+      <a href="bolsos.html" class="card">
+        <span class="card-text">BOLSOS</span>
+        <div class="card-img" style="background-image: url('../assets/d68c3377afa5e0fd9db07006f1c0237a.jpg');"></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="marca">MV</div>
+
+    <div class="links">
+      <ul>
+        <li><a href="./faq.html">Preguntas Frecuentes</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="redes">
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
 </body>
 </html>

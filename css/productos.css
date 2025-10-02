@@ -1,3 +1,16 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
 /* HEADER */
 header {
   display: flex;
@@ -5,6 +18,8 @@ header {
   align-items: center;
   background: #1a1a1a;
   padding: 15px 40px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
     /* LOGO */
@@ -15,7 +30,7 @@ header {
     }
 
     header .logo h1 {
-      font-size: 2.5rem; 
+      font-size: 2rem; 
       font-weight: bold;
       color: #b266ff;
       margin: 0;
@@ -24,7 +39,6 @@ header {
     header .logo .tagline {
       font-size: 0.8rem;
       color: #fff;
-      margin: 2px 0 0 0; 
       letter-spacing: 1px;
     }
 
@@ -32,9 +46,10 @@ header {
     header nav ul {
       display: flex;
       list-style: none;
-      gap: 100px;
+      gap: 40px;
       margin: 0;
       padding: 0;
+      flex-wrap: wrap;
     }
 
     header nav a {
@@ -52,17 +67,17 @@ header {
     header .icons {
       display: flex;
       align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     header .icons .search {
       padding: 5px 10px;
       border: none;
       border-radius: 3px;
-      margin-right: 10px;
     }
 
     header .icons a {
-      margin-left: 15px;
       color: #fff;
       font-size: 1.2rem;
       text-decoration: none;
@@ -73,18 +88,6 @@ header {
       color: #b266ff;
     }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #fff;
-}
 
 /* TÍTULO PRINCIPAL */
 main h2 {
@@ -100,6 +103,7 @@ main section:first-of-type {
   align-items: center;
   gap: 15px;
   margin: 0 40px 30px;
+  flex-wrap: wrap;
 }
 
 main select,
@@ -123,9 +127,9 @@ main section:nth-of-type(2) {
 
 main section:nth-of-type(2) > div {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;            
-  margin-bottom: 60px;    
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;            
+  margin-bottom: 40px;    
 }
 
 main section:nth-of-type(2) > div:last-child {
@@ -134,18 +138,17 @@ main section:nth-of-type(2) > div:last-child {
 
 main section:nth-of-type(2) article {
   text-align: center;
-  background: none;
-  min-height: 350px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 main section:nth-of-type(2) img {
   width: 100%;
-  height: 450px;
+  height: 300px;
   object-fit: cover;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 main section:nth-of-type(2) h3 {
@@ -157,7 +160,6 @@ main section:nth-of-type(2) h3 {
 main section:nth-of-type(2) p {
   color: #ccc;
   font-size: 0.9rem;
-  margin: 0;
 }
 
 /* FOOTER */
@@ -168,26 +170,20 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 footer .marca {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #b266ff;
 }
 
-footer .links a {
-  color: #fff;
-  margin-right: 30px;
-  text-decoration: none;
-}
-
-
 footer .redes a {
   color: #fff;
   font-size: 1.4rem;
-  margin-right: 15px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .card-img {
@@ -197,28 +193,23 @@ footer .redes a {
   background-position: center;
 }
 
-footer .links ul {
-  list-style: none;
-  display: flex;
-  gap: 100px;
-  padding: 0;
-  margin: 0;
-}
-
 footer .links a {
   color: #fff;
   text-decoration: none;
 }
 
-footer .links a:hover {
-  color: #b266ff;
+footer .links ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 /* PAGINACIÓN */
 .pagination {
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
 .pagination nav ul {
@@ -231,13 +222,15 @@ footer .links a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   color: #fff;
   background-color: #1a1a1a;
+  border-radius: 5px;
 }
 
 .pagination nav li a:hover {
+  background-color: #b266ff;
   color: #fff;
 }
 
@@ -249,4 +242,51 @@ footer .links a:hover {
 .pagination nav li:last-child a:hover {
    background-color: transparent;
    color: #b266ff;
+}
+
+/*RESPONSIVE*/
+
+/*Tablets*/
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header nav ul {
+    gap: 20px;
+  }
+}
+
+/*Celulares*/
+@media (max-width: 600px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main h2 {
+    font-size: 1.5rem;
+  }
+
+  main section:first-of-type {
+    margin: 0 20px 20px;
+  }
+
+  main section:nth-of-type(2) {
+    margin: 0 20px 30px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
