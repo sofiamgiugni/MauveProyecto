@@ -1,0 +1,52 @@
+.welcome {
+  background-color: #4B0082;
+  color: white;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  .slogan {
+    margin: 5px 0 20px;
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  h2 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #9370DB;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s;
+    align-self: center; 
+
+    &:hover {
+      background-color: #BA55D3;
+    }
+  }
+}

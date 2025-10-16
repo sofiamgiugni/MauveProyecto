@@ -1,0 +1,41 @@
+$violet: #b266ff;
+$violet-hover: #8c1aff;
+$font-main: Arial, sans-serif;
+$color-text: #fff;
+
+.card-body p,
+.card ul li {
+  color: $color-text;
+}
+
+body {
+  font-family: $font-main;
+}
+
+.text-violet {
+  color: $violet !important;
+}
+
+.btn-violet {
+  background-color: $violet;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background-color: $violet-hover;
+  }
+}
+
+section {
+  h3 {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-left: 0.5rem;
+  }
+}
+
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
