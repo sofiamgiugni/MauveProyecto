@@ -1,41 +1,498 @@
-$violet: #b266ff;
-$violet-hover: #8c1aff;
-$font-main: Arial, sans-serif;
+//VARIABLES
+$color-bg: #0d0d0d;
+$color-bg-dark: #1a1a1a;
 $color-text: #fff;
+$color-accent: #b266ff;
+$color-accent-hover: #8c1aff;
+$font-main: 'Arial', sans-serif;
 
-.card-body p,
-.card ul li {
-  color: $color-text;
+//MIXINS
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin transition($time: 0.3s) {
+  transition: $time;
+}
+
+@mixin button-style($bg, $color) {
+  background: $bg;
+  border: none;
+  color: $color;
+  cursor: pointer;
+  @include transition();
+}
+
+//PLACEHOLDERS
+%text-center {
+  text-align: center;
+}
+
+%no-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+%card {
+  background: $color-bg-dark;
+  text-align: center;
+}
+
+//RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: $font-main;
+  background: $color-bg;
+  color: $color-text;
 }
 
-.text-violet {
-  color: $violet !important;
-}
+//HEADER
+header {
+  @include flex-center(space-between, center);
+  background: $color-bg-dark;
+  padding: 15px 40px;
 
-.btn-violet {
-  background-color: $violet;
-  color: #fff;
-  border: none;
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
 
-  &:hover {
-    background-color: $violet-hover;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: $color-accent;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      color: $color-text;
+      margin-top: 2px;
+      letter-spacing: 1px;
+    }
+  }
+
+  nav {
+    ul {
+      @extend %no-list;
+      display: flex;
+      gap: 100px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-text;
+      font-weight: 500;
+      @include transition();
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  .icons {
+    @include flex-center();
+
+    .search {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+
+    a {
+      margin-left: 15px;
+      color: $color-text;
+      font-size: 1.2rem;
+      text-decoration: none;
+      @include transition();
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
   }
 }
 
-section {
+//MAIN
+.main {
+  padding: 40px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: $color-accent;
+  margin-bottom: 30px;
+  @extend %text-center;
+}
+
+//RANDOMS
+.randoms {
   h3 {
-    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: $color-accent;
     text-align: left;
-    margin-left: 0.5rem;
+  }
+
+  .randoms-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
   }
 }
 
+//PRODUCTOS
+.product {
+  @extend %card;
+  padding: 20px;
 
-.card-img-top {
-  height: 300px;
-  object-fit: cover;
+  img {
+    width: 100%;
+  }
+
+  p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  button {
+    @include button-style($color-accent, $color-text);
+    font-size: 1.2rem;
+    border-radius: 50%;
+    padding: 8px 12px;
+
+    &:hover {
+      background: $color-accent-hover;
+    }
+  }
+}
+
+//OUTFITS
+.outfits {
+  margin-top: 30px;
+
+  h3 {
+    margin-bottom: 20px;
+    color: $color-accent;
+    @extend %text-center;
+  }
+
+  .outfits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .outfit {
+    @extend %card;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px;
+    height: auto;
+    min-height: 500px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+
+    .outfit-img {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 8px;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+        display: block;
+      }
+
+      button {
+        @include button-style($color-accent, $color-text);
+        font-size: 1.2rem;
+        padding: 5px 10px;
+
+        &:hover {
+          background: $color-accent-hover;
+        }
+      }
+    }
+
+    ul {
+      @extend %no-list;
+      @extend %text-center;
+      margin-top: 12px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+//FOOTER
+footer {
+  background: $color-bg-dark;
+  padding: 20px 40px;
+  @include flex-center(space-between, center);
+  flex-wrap: wrap;
+
+  .marca {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color-accent;
+  }
+
+  .links {
+    ul {
+      @extend %no-list;
+      display: flex;
+    }
+
+    a {
+      color: $color-text;
+      margin-right: 100px;
+      text-decoration: none;
+      @include transition();
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  .redes a {
+    color: $color-text;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+}
+
+//CARD IMAGEN
+.card-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+  /* CARRUSEL RANDOMS */
+
+
+.randoms {
+  width: 100%;
+  padding: 2rem 0;
+
+  h3 {
+    text-align: center;
+    color: #a855f7;
+    margin-bottom: 1.5rem;
+  }
+
+  .swiper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .swiper-slide {
+    background-color: #111;
+    border-radius: 1rem;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      padding: 15px 0;
+    }
+
+    button {
+      background-color: #a855f7;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+        background-color: #9333ea;
+      }
+      
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #a855f7;
+  }
+
+  .swiper-pagination-bullet {
+    background: #a855f7;
+  }
+}
+
+/* Tablets grandes */
+@media (max-width: 992px) {
+  .outfits .outfits-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 14px;
+  }
+
+  .outfits .outfit {
+    max-width: 300px;
+    min-height: 460px;
+    padding: 12px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+  .outfits .outfits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .outfits .outfit {
+    max-width: 100%;
+    min-height: 420px;
+    padding: 10px;
+  }
+
+  .outfits h3 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ====== RESPONSIVE HEADER ====== */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  header nav ul {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  header .icons {
+    align-self: flex-end;
+    .search {
+      width: 150px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  header .logo {
+    align-items: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  header .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    .search-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      width: 100%;
+    
+      .search{
+        width: 100px;
+        max-width: 200px;
+      }
+    }
+
+    .user-cart{
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+  }
+}
+
+/* ====== RESPONSIVE FOOTER ====== */
+@media (max-width: 992px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  footer .links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer .links a {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    gap: 15px;
+  }
+
+  footer .marca {
+    font-size: 1.8rem;
+  }
+
+  footer .redes a {
+    font-size: 1.3rem;
+    margin: 0 8px;
+  }
 }
