@@ -1,13 +1,10 @@
-// VARIABLES
-$color-fondo: #111;
-$color-texto: #fff;
-$color-secundario: #1a1a1a;
-$color-acento: #b266ff;
-$fuente-principal: Arial, sans-serif;
+@import 'variables';
+@import 'header';
+@import 'footer';
 
 // RESET
 * {
-  margin: 0;
+  margin: 0;        
   padding: 0;
   box-sizing: border-box;
 }
@@ -18,87 +15,18 @@ body {
   color: $color-texto;
 }
 
-// HEADER
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: $color-secundario;
-  padding: 15px 40px;
-  flex-wrap: wrap;
-  gap: 15px;
 
-  // LOGO
-  .logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-
-    h1 {
-      font-size: 2rem;
-      font-weight: bold;
-      color: $color-acento;
-      margin: 0;
-    }
-
-    .tagline {
-      font-size: 0.8rem;
-      color: $color-texto;
-      letter-spacing: 1px;
-    }
-  }
-
-  // NAV
-  nav {
-    ul {
-      display: flex;
-      list-style: none;
-      gap: 40px;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-    }
-
-    a {
-      text-decoration: none;
-      color: $color-texto;
-      font-weight: 500;
-      transition: 0.3s;
-
-      &:hover {
-        color: $color-acento;
-      }
-    }
-  }
-
-  // ICONOS
-  .icons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-
-    .search {
-      padding: 5px 10px;
-      border: none;
-      border-radius: 3px;
-    }
-
-    a {
-      color: $color-texto;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: 0.3s;
-
-      &:hover {
-        color: $color-acento;
-      }
-    }
-  }
-}
 
 // TÍTULO PRINCIPAL
 main {
+
+  h1{
+    text-align: center;
+    margin: 30px 0;
+    color: $color-morado;
+    font-weight: bold;
+    font-size: 35px;
+  }
   h2 {
     text-align: center;
     margin: 30px 0;
@@ -119,44 +47,43 @@ main {
       padding: 8px 12px;
       border-radius: 5px;
       border: none;
-      background: $color-secundario;
+      background: $color-fondo-gris;
       color: $color-texto;
       cursor: pointer;
 
       &:hover {
-        background: $color-acento;
+        background: $color-morado;
       }
     }
   }
+}
 
-  // GRID DE PRODUCTOS
-  section:nth-of-type(2) {
-    margin: 0 40px 50px;
+// GRID DE PRODUCTOS CON BOOTSTRAP
+.container {
+  margin-bottom: 50px;
 
-    > div {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      margin-bottom: 40px;
+  .row {
+    margin-bottom: 40px;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
 
-    article {
-      text-align: center;
-      min-height: 320px;
-      display: flex;
-      flex-direction: column;
-    }
+  article {
+    text-align: center;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
 
     img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
+      height: 400px;
+      object-fit: contain;
       margin-bottom: 10px;
       border-radius: 5px;
+      display: block;
     }
 
     h3 {
@@ -166,7 +93,7 @@ main {
     }
 
     p {
-      color: #ccc;
+      color: $color-texto;
       font-size: 0.9rem;
     }
   }
@@ -174,7 +101,7 @@ main {
 
 //  FOOTER
 footer {
-  background: $color-secundario;
+  background: $color-fondo-gris;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -185,7 +112,7 @@ footer {
   .marca {
     font-size: 1.5rem;
     font-weight: bold;
-    color: $color-acento;
+    color: $color-morado;
   }
 
   .redes a {
@@ -195,7 +122,7 @@ footer {
     transition: 0.3s;
 
     &:hover {
-      color: $color-acento;
+      color: $color-morado;
     }
   }
 
@@ -242,11 +169,11 @@ footer {
           width: 35px;
           height: 35px;
           color: $color-texto;
-          background-color: $color-secundario;
+          background-color: $color-fondo-gris;
           border-radius: 5px;
 
           &:hover {
-            background-color: $color-acento;
+            background-color: $color-fondo-gris;
             color: $color-texto;
           }
         }
@@ -257,7 +184,7 @@ footer {
 
           &:hover {
             background-color: transparent;
-            color: $color-acento;
+            color: $color-morado;
           }
         }
       }
@@ -313,7 +240,89 @@ footer {
   }
 }
 
-main section:nth-of-type(2) img {
-  height: 400px; 
+/* ====== RESPONSIVE BOOTSTRAP GRID ====== */
+@media (max-width: 768px) {
+  .container article {
+    margin-bottom: 30px;
+    
+    img {
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container article img {
+    height: 400px;
+  }
+}
+
+/* ====== RESPONSIVE HEADER ====== */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  header nav ul {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  header .icons {
+    align-self: flex-end;
+    .search {
+      width: 150px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  header .logo {
+    align-items: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  header .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    .search-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      width: 100%;
+    
+      .search{
+        width: 100px;
+        max-width: 200px;
+      }
+    }
+
+    .user-cart{
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+  }
 }
 

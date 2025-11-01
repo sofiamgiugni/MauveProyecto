@@ -1,0 +1,23 @@
+// ========================================
+// VARIABLES GLOBALES - MAUVE
+// ========================================
+
+// COLORES
+$color-fondo: #0d0d0d;
+$color-fondo-gris: #1a1a1a;
+$color-texto: #fff;
+$color-morado: #b266ff;
+$color-morado-oscuro: #8c1aff;
+
+// TIPOGRAFÍA
+$fuente-principal: Arial, sans-serif;
+
+// IMPORTAR MIXINS
+@import 'mixins';
+
+// PLACEHOLDERS
+%no-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

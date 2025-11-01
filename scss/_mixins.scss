@@ -1,0 +1,105 @@
+// ========================================
+// MIXINS PARA MAUVE - PROYECTO
+// ========================================
+
+// MIXIN: Flex Center
+// Permite centrar elementos usando flexbox con opciones de justify y align
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// MIXIN: Transición
+// Aplica una transición suave con duración configurable
+@mixin transition($time: 0.3s) {
+  transition: all $time ease;
+}
+
+// MIXIN: Grid Responsivo
+// Crea una grilla con columnas que se ajustan automáticamente según el ancho mínimo especificado
+@mixin grid($min) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: 15px;
+}
+
+// MIXIN: Título de Sección
+// Estilo consistente para los títulos de las secciones principales
+@mixin titulo-seccion($color) {
+  font-size: 2rem;
+  color: $color;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+// MIXIN: Botón
+// Estilo para botones con color de fondo y texto configurables
+@mixin boton($bg, $color: #fff) {
+  background: $bg;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: $color;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @include transition();
+
+  &:hover {
+    background: lighten($bg, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba($bg, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// MIXIN: Card Base
+// Estilo base para tarjetas de contenido
+@mixin card-base {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 15px;
+  overflow: hidden;
+  @include transition();
+}
+
+// MIXIN: Hover Scale
+// Efecto de escala al hacer hover
+@mixin hover-scale($scale: 1.05) {
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+// MIXIN: Responsive Text
+// Ajusta el tamaño del texto según el tamaño de pantalla
+@mixin responsive-text($desktop, $tablet, $mobile) {
+  font-size: $desktop;
+
+  @media (max-width: 992px) {
+    font-size: $tablet;
+  }
+
+  @media (max-width: 600px) {
+    font-size: $mobile;
+  }
+}
+
+// MIXIN: Reset Link
+// Elimina estilos por defecto de los enlaces
+@mixin reset-link {
+  text-decoration: none;
+  color: inherit;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,39 @@
+@import 'variables';
+
+footer {
+  background: $color-fondo-gris;
+  padding: 20px 40px;
+  @include flex-center(space-between, center);
+  flex-wrap: wrap;
+
+  .marca {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color-morado;
+  }
+
+  .links {
+    ul {
+      @extend %no-list;
+      display: flex;
+    }
+
+    a {
+      color: $color-texto;
+      margin-right: 100px;
+      text-decoration: none;
+      @include transition();
+
+      &:hover {
+        color: $color-morado;
+      }
+    }
+  }
+
+  .redes a {
+    color: $color-texto;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+}

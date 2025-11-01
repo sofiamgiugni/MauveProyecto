@@ -1,17 +1,16 @@
-/* RESET */
-* {
-  margin: 0;
+@charset "UTF-8";
+footer .links ul, header nav ul {
+  list-style: none;
   padding: 0;
-  box-sizing: border-box;
+  margin: 0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #0d0d0d; 
-  color: #fff;
+footer .links ul, header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -19,74 +18,66 @@ header {
   background: #1a1a1a;
   padding: 15px 40px;
 }
+header .logo {
+  color: #b266ff;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+header .logo h1,
+header .logo .brand-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b266ff;
+  margin: 0;
+}
+header .logo .tagline {
+  font-size: 0.8rem;
+  color: #fff;
+  margin-top: 2px;
+  letter-spacing: 1px;
+}
+header nav ul {
+  display: flex;
+  gap: 100px;
+}
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+header nav a:hover {
+  color: #b266ff;
+}
+header .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .icons .search {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+header .icons a {
+  margin-left: 15px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+header .icons a:hover {
+  color: #b266ff;
+}
 
-    /* LOGO */
-    header .logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
+footer .links ul, header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    header .logo h1 {
-      font-size: 2.5rem; 
-      font-weight: bold;
-      color: #b266ff;
-      margin: 0;
-    }
-
-    header .logo .tagline {
-      font-size: 0.8rem;
-      color: #fff;
-      margin: 2px 0 0 0; 
-      letter-spacing: 1px;
-    }
-
-    /* NAV */
-    header nav ul {
-      display: flex;
-      list-style: none;
-      gap: 100px;
-      margin: 0;
-      padding: 0;
-    }
-
-    header nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    header nav a:hover {
-      color: #b266ff;
-    }
-
-    /* ICONS */
-    header .icons {
-      display: flex;
-      align-items: center;
-    }
-
-    header .icons .search {
-      padding: 5px 10px;
-      border: none;
-      border-radius: 3px;
-      margin-right: 10px;
-    }
-
-    header .icons a {
-      margin-left: 15px;
-      color: #fff;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    header .icons a:hover {
-      color: #b266ff;
-    }
-
-/* FOOTER */
 footer {
   background: #1a1a1a;
   padding: 20px 40px;
@@ -95,55 +86,286 @@ footer {
   align-items: center;
   flex-wrap: wrap;
 }
-
 footer .marca {
   font-size: 2rem;
   font-weight: bold;
   color: #b266ff;
 }
-
+footer .links ul {
+  display: flex;
+}
 footer .links a {
   color: #fff;
-  margin-right: 30px; 
+  margin-right: 100px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
-
 footer .links a:hover {
   color: #b266ff;
 }
-
 footer .redes a {
   color: #fff;
-  font-size: 1.4rem; 
+  font-size: 1.4rem;
   margin-right: 15px;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-footer .redes a:hover {
-  color: #b266ff;
-}
-.card-img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;     
-  background-position: center; 
-}
-footer .links ul {
-  list-style: none;   
-  display: flex;     
-  gap: 100px;          
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+main h1 {
+  font-size: 2rem;
+  color: #b266ff;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+}
+
+#faq {
+  padding: 20px;
+}
+#faq h2 {
+  color: #b266ff;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.accordion .accordion-item {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.accordion .accordion-item:hover {
+  border-color: #b266ff;
+  box-shadow: 0 0 15px rgba(178, 102, 255, 0.2);
+}
+.accordion .accordion-item:last-child {
+  margin-bottom: 0;
+}
+.accordion .accordion-header {
   margin: 0;
 }
-
-footer .links a {
+.accordion .accordion-header .accordion-button {
+  background: #1a1a1a;
   color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 20px 25px;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: none;
 }
-
-footer .links a:hover {
+.accordion .accordion-header .accordion-button:not(.collapsed) {
+  background: #1a1a1a;
+  color: #b266ff;
+  box-shadow: none;
+  border-bottom: 2px solid #b266ff;
+}
+.accordion .accordion-header .accordion-button:hover {
+  background: rgb(33.65, 33.65, 33.65);
   color: #b266ff;
 }
+.accordion .accordion-header .accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+  outline: none;
+}
+.accordion .accordion-header .accordion-button::after {
+  background-image: none;
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #b266ff;
+  transition: all 0.3s ease;
+}
+.accordion .accordion-header .accordion-button:not(.collapsed)::after {
+  content: "−";
+  transform: none;
+}
+.accordion .accordion-collapse {
+  background: #1a1a1a;
+}
+.accordion .accordion-body {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 20px 25px;
+  font-size: 1rem;
+  line-height: 1.8;
+  border-top: 1px solid #333;
+}
+.accordion .accordion-body p {
+  margin-bottom: 10px;
+}
+.accordion .accordion-body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  main {
+    padding: 30px 15px;
+  }
+  main h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  #faq h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .accordion .accordion-header .accordion-button {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+  .accordion .accordion-body {
+    font-size: 0.95rem;
+    padding: 15px 20px;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    padding: 20px 10px;
+  }
+  main h1 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+  }
+  #faq {
+    padding: 10px;
+  }
+  #faq h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  .accordion .accordion-item {
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  .accordion .accordion-header .accordion-button {
+    font-size: 0.95rem;
+    padding: 12px 15px;
+  }
+  .accordion .accordion-body {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+  header nav ul {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  header .icons {
+    align-self: flex-end;
+  }
+  header .icons .search {
+    width: 150px;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  header .logo {
+    align-items: center;
+  }
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  header .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  header .icons .search-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    width: 100%;
+  }
+  header .icons .search-group .search {
+    width: 100px;
+    max-width: 200px;
+  }
+  header .icons .user-cart {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+}
+@media (max-width: 992px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  footer .links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  footer .links a {
+    margin-right: 0;
+  }
+}
+@media (max-width: 600px) {
+  footer {
+    gap: 15px;
+  }
+  footer .marca {
+    font-size: 1.8rem;
+  }
+  footer .redes a {
+    font-size: 1.3rem;
+    margin: 0 8px;
+  }
+}
+
+/*# sourceMappingURL=faq.css.map */

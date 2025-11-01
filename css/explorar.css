@@ -1,15 +1,15 @@
-.outfits .outfit ul, .outfits h3, .section-title {
-  text-align: center;
-}
-
 footer .links ul, .outfits .outfit ul, header nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+.outfits .outfit ul, .outfits h3, .section-title {
+  text-align: center;
+}
+
 .outfits .outfit, .product {
-  background: #1a1a1a;
+  background: #0d0d0d;
   text-align: center;
 }
 
@@ -20,7 +20,7 @@ footer .links ul, .outfits .outfit ul, header nav ul {
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   background: #0d0d0d;
   color: #fff;
 }
@@ -33,11 +33,13 @@ header {
   padding: 15px 40px;
 }
 header .logo {
+  color: #b266ff;
   display: flex;
   flex-direction: column;
   line-height: 1.1;
 }
-header .logo h1 {
+header .logo h1,
+header .logo .brand-name {
   font-size: 2.5rem;
   font-weight: bold;
   color: #b266ff;
@@ -118,9 +120,16 @@ header .icons a:hover {
 .product button {
   background: #b266ff;
   border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
+}
+.product button:hover {
+  background: white;
+}
+.product button {
   font-size: 1.2rem;
   border-radius: 50%;
   padding: 8px 12px;
@@ -171,9 +180,16 @@ header .icons a:hover {
 .outfits .outfit .outfit-img button {
   background: #b266ff;
   border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
+}
+.outfits .outfit .outfit-img button:hover {
+  background: white;
+}
+.outfits .outfit .outfit-img button {
   font-size: 1.2rem;
   padding: 5px 10px;
 }
@@ -232,7 +248,7 @@ footer .redes a {
 }
 .randoms h3 {
   text-align: center;
-  color: #a855f7;
+  color: #b266ff;
   margin-bottom: 1.5rem;
 }
 .randoms .swiper {
@@ -265,7 +281,7 @@ footer .redes a {
   padding: 15px 0;
 }
 .randoms .swiper-slide button {
-  background-color: #a855f7;
+  background-color: #b266ff;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -276,7 +292,7 @@ footer .redes a {
   transition: 0.3s ease;
 }
 .randoms .swiper-slide button:hover {
-  background-color: #9333ea;
+  background-color: #8c1aff;
 }
 .randoms .swiper-button-next,
 .randoms .swiper-button-prev {
@@ -312,7 +328,7 @@ footer .redes a {
     font-size: 1.6rem;
   }
 }
-/* ====== RESPONSIVE HEADER ====== */
+/* RESPONSIVE HEADER */
 @media (max-width: 992px) {
   header {
     flex-direction: column;
@@ -371,7 +387,7 @@ footer .redes a {
     justify-content: center;
   }
 }
-/* ====== RESPONSIVE FOOTER ====== */
+/*  RESPONSIVE FOOTER  */
 @media (max-width: 992px) {
   footer {
     flex-direction: column;

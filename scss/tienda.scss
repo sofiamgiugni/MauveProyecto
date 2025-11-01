@@ -1,36 +1,6 @@
-// VARIABLES 
-$violeta: #b266ff;
-$oscuro: #1a1a1a;
-$producto-bg: #2a2a2a;
-$transicion: 0.3s ease;
-
-//MIXINS
-@mixin boton($color){
-  background: $color;
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-  border-radius: 5px;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: 0.3s;
-
-  &:hover{
-    background: lighten($color, 10%);
-  }
-}
-
-@mixin titulo-seccion($color){
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  color: $color;
-}
-
-@mixin grid($min){
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
-  gap: 15px;
-}
+@import 'variables';
+@import 'header';
+@import 'footer';
 
 //PLACEHOLDERS
 %card-base {
@@ -38,7 +8,7 @@ $transicion: 0.3s ease;
   border-radius: 3px;
   overflow: hidden;
   border: 2px solid #333;
-  transition: transform $transicion;
+  @include transition();
 }
 
 %hover-scale {
@@ -55,94 +25,30 @@ $transicion: 0.3s ease;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #0d0d0d;
-  color: #fff;
+  font-family: $fuente-principal;
+  background: $color-fondo;
+  color: $color-texto;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-//HEADER
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: $oscuro;
-  padding: 15px 40px;
-  flex-wrap: wrap;
-  gap: 15px;
 
-  .logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-
-    h1 {
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: $violeta;
-    }
-
-    .tagline {
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-    }
-  }
-
-  nav {
-    ul {
-      display: flex;
-      list-style: none;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 500;
-        transition: 0.3s;
-
-        &:hover {
-          color: $violeta;
-        }
-      }
-    }
-  }
-
-  .icons {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-
-    .search {
-      padding: 5px 10px;
-      border: none;
-      border-radius: 3px;
-    }
-
-    a {
-      color: #fff;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: 0.3s;
-
-      &:hover {
-        color: $violeta;
-      }
-    }
-  }
-}
 
 //PRODUCTOS DESTACADOS
 #productos-destacados{
   padding: 20px;
   text-align: center;
 
+  h1{
+    @include titulo-seccion($color-morado);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
   h2{
-    @include titulo-seccion($violeta);
-    font-size: 1.5rem;
+    @include titulo-seccion($color-morado);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
   }
 
   .productos{
@@ -152,9 +58,9 @@ header {
 
   .producto{
     text-align: center;
-    background: $producto-bg;
+    background: $color-fondo-gris;
     padding: 15px;
-    transition: transform 0.5s;
+    @include transition(0.5s);
     border-radius: 6px;
 
   &:hover{
@@ -177,13 +83,13 @@ header {
   }
 
   button{
-    @include boton(#8d3cde);
+    @include boton($color-morado);
   }
 }
 }
 
 footer {
-  background: $oscuro;
+  background: $color-fondo-gris;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -194,7 +100,7 @@ footer {
   .marca {
     font-size: 2rem;
     font-weight: bold;
-    color: $violeta;
+    color: $color-morado;
   }
 
   .links {
@@ -208,109 +114,57 @@ footer {
       justify-content: center;
 
       a {
-        color: #fff;
+        color: $color-texto;
         text-decoration: none;
 
         &:hover {
-          color: $violeta;
+          color: $color-morado;
         }
-      }
-    }
-  }
-
-  //CATEGORIAS
-  #categorias{
-    padding: 20px;
-    text-align: center;
-
-    h2{
-      @include titulo-seccion($violeta)
-    }
-
-    .categorias{
-      @include grid(400px)
-    }
-
-    .card{
-      @extend %card-base;
-      @extend %hover-scale;
-    }
-
-      .card-img{
-        aspect-ratio: 1/1;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-      }
-
-      .card-text{
-        position: absolute;
-        top: 50%;
-        left: 25px;
-        transform: translateY(-50%) rotate(-90deg);
-        transform-origin: left center;
-        color: rgba(0, 0, 0, 0.9);
-        font-size: 1.5rem;
-        font-weight: 800;
-        padding: 10px;
-        border-radius: 3px;
-        letter-spacing: 3px;
-      }
-    }
-  }
-
-  //FOOTER
-  footer{
-    background: $oscuro;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-
-    .marca{
-      font-size: 2rem;
-      font-weight: bold;
-      color: $violeta;
-    }
-
-    .links{
-      ul{
-        list-style: none;
-        display: flex;
-        gap: 30px;
-        padding: 0;
-        margin: 0;
-        flex-wrap: wrap;
-        justify-content: center;
-      
-      a{
-        color: #fff;
-        text-decoration: none;
-
-        &:hover{
-          color: $violeta;
-        }
-      }
-    }
-  }
-
-  .redes {
-    display: flex;
-    gap: 15px;
-
-    a {
-      color: #fff;
-      font-size: 1.4rem;
-      text-decoration: none;
-
-      &:hover {
-        color: $violeta;
       }
     }
   }
 }
+
+//CATEGORIAS
+#categorias{
+  padding: 20px;
+  text-align: center;
+
+  h2{
+    @include titulo-seccion($color-morado)
+  }
+
+  .categorias{
+    @include grid(400px)
+  }
+
+  .card{
+    @extend %card-base;
+    @extend %hover-scale;
+  }
+
+  .card-img{
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+
+  .card-text{
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left center;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 10px;
+    border-radius: 3px;
+    letter-spacing: 3px;
+  }
+}
+
 
 @media (max-width: 992px) {
   header {
@@ -327,3 +181,73 @@ footer {
     }
   }
 }
+
+/* ====== RESPONSIVE HEADER ====== */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  header nav ul {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  header .icons {
+    align-self: flex-end;
+    .search {
+      width: 150px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  header .logo {
+    align-items: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  header .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    .search-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      width: 100%;
+    
+      .search{
+        width: 100px;
+        max-width: 200px;
+      }
+    }
+
+    .user-cart{
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+  }
+}
+

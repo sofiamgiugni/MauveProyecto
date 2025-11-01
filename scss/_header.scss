@@ -1,0 +1,72 @@
+@import 'variables';
+
+//HEADER
+header {
+  @include flex-center(space-between, center);
+  background: $color-fondo-gris;
+  padding: 15px 40px;
+
+  .logo {
+    color: $color-morado;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+
+    h1,
+    .brand-name {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: $color-morado;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      color: $color-texto;
+      margin-top: 2px;
+      letter-spacing: 1px;
+    }
+  }
+
+  nav {
+    ul {
+      @extend %no-list;
+      display: flex;
+      gap: 100px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-texto;
+      font-weight: 500;
+      @include transition();
+
+      &:hover {
+        color: $color-morado;
+      }
+    }
+  }
+
+  .icons {
+    @include flex-center();
+
+    .search {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+
+    a {
+      margin-left: 15px;
+      color: $color-texto;
+      font-size: 1.2rem;
+      text-decoration: none;
+      @include transition();
+
+      &:hover {
+        color: $color-morado;
+      }
+    }
+  }
+}

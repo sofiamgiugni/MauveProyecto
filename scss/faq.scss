@@ -1,0 +1,318 @@
+// ========================================
+// FAQ PAGE - MAUVE
+// ========================================
+
+@import 'variables';
+@import 'header';
+@import 'footer';
+
+// RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fuente-principal;
+  background: $color-fondo;
+  color: $color-texto;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// MAIN
+main {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
+  h1 {
+    @include titulo-seccion($color-morado);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+  }
+}
+
+// SECCIÓN FAQ
+#faq {
+  padding: 20px;
+
+  h2 {
+    color: $color-morado;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+// ACCORDION STYLES
+.accordion {
+  .accordion-item {
+    background: $color-fondo-gris;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    @include transition(0.3s);
+
+    &:hover {
+      border-color: $color-morado;
+      box-shadow: 0 0 15px rgba($color-morado, 0.2);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .accordion-header {
+    margin: 0;
+
+    .accordion-button {
+      background: $color-fondo-gris;
+      color: $color-texto;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 20px 25px;
+      border: none;
+      @include transition(0.3s);
+      box-shadow: none;
+
+      &:not(.collapsed) {
+        background: $color-fondo-gris;
+        color: $color-morado;
+        box-shadow: none;
+        border-bottom: 2px solid $color-morado;
+      }
+
+      &:hover {
+        background: lighten($color-fondo-gris, 3%);
+        color: $color-morado;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border-color: transparent;
+        outline: none;
+      }
+
+      // Icono del accordion (flecha)
+      &::after {
+        background-image: none;
+        content: '+';
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: $color-morado;
+        @include transition(0.3s);
+      }
+
+      &:not(.collapsed)::after {
+        content: '−';
+        transform: none;
+      }
+    }
+  }
+
+  .accordion-collapse {
+    background: $color-fondo-gris;
+  }
+
+  .accordion-body {
+    background: $color-fondo-gris;
+    color: $color-texto;
+    padding: 20px 25px;
+    font-size: 1rem;
+    line-height: 1.8;
+    border-top: 1px solid #333;
+
+    p {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+@media (max-width: 992px) {
+  main {
+    padding: 30px 15px;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+  }
+
+  #faq {
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  .accordion {
+    .accordion-header .accordion-button {
+      font-size: 1rem;
+      padding: 15px 20px;
+    }
+
+    .accordion-body {
+      font-size: 0.95rem;
+      padding: 15px 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px 10px;
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+    }
+  }
+
+  #faq {
+    padding: 10px;
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+  }
+
+  .accordion {
+    .accordion-item {
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    .accordion-header .accordion-button {
+      font-size: 0.95rem;
+      padding: 12px 15px;
+    }
+
+    .accordion-body {
+      font-size: 0.9rem;
+      padding: 12px 15px;
+      line-height: 1.6;
+    }
+  }
+}
+
+// RESPONSIVE HEADER (heredado pero reforzado)
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+
+    nav ul {
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .icons {
+      align-self: flex-end;
+      
+      .search {
+        width: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+    .logo {
+      align-items: center;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+
+      .search-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+        width: 100%;
+      
+        .search {
+          width: 100px;
+          max-width: 200px;
+        }
+      }
+
+      .user-cart {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// RESPONSIVE FOOTER
+@media (max-width: 992px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+
+    .links ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .links a {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    gap: 15px;
+
+    .marca {
+      font-size: 1.8rem;
+    }
+
+    .redes a {
+      font-size: 1.3rem;
+      margin: 0 8px;
+    }
+  }
+}

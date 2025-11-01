@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda Mauve - Productos destacados y categorías de moda alternativa. Zapatos, tops, tejidos, corsets, vestidos y más. Break the mold con estilo único.">
   <link rel="stylesheet" href="../css/tienda.css">  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-  <title>Mauve - Shop</title>
+  <title>Tienda - Mauve | Moda Alternativa y Productos Destacados</title>
 </head>
 
 <body>
-  
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <h1>MAUVE</h1>
+      <p class="brand-name">MAUVE</p>
       <p class="tagline">BREAK THE MOLD</p>
     </div>
-    <nav> 
+    <nav>
       <ul>
         <li><a href="./tienda.html">Home</a></li>
         <li><a href="./explorar.html">Explorar</a></li>
@@ -26,63 +25,65 @@
       </ul>
     </nav>
     <div class="icons">
-      <input type="text" class="search" placeholder="Buscar...">
-      <a href="#"><i class="fas fa-search"></i></a>
-      <a href="#"><i class="fas fa-user"></i></a>
-      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      <div class="search-group">
+        <input type="text" class="search" placeholder="Buscar..." aria-label="Buscar productos">
+        <a href="#" aria-label="Realizar búsqueda"><i class="fas fa-search"></i></a>
+      </div>
+      <div class="user-cart">
+        <a href="#" aria-label="Mi cuenta"><i class="fas fa-user"></i></a>
+        <a href="#" aria-label="Carrito de compras"><i class="fas fa-shopping-cart"></i></a>
+      </div>
     </div>
   </header>
 
   <!-- PRODUCTOS DESTACADOS -->
   <section id="productos-destacados">
-    <h2>PRODUCTOS DESTACADOS</h2>
+    <h1>PRODUCTOS DESTACADOS</h1>
     <div class="swiper productos">
       <div class="swiper-wrapper">
-
-      <div class="swiper-slide producto">
-        <div class="imagen">
-          <img src="../assets/TiendaCarruselProductosDestacados/1.png" alt="Chaqueta de cuero sintético negra">
+        <div class="swiper-slide producto">
+          <div class="imagen">
+            <img src="../assets/TiendaCarruselProductosDestacados/1.png" alt="Chaqueta Ana - Chaqueta de cuero sintético negra con estilo rock">
+          </div>
+          <p>CHAQUETA DE CUERO ANA<br>$95.000</p>
+          <button aria-label="Agregar Chaqueta Ana al carrito">+</button>
         </div>
-        <p>CHAQUETA DE CUERO ANA<br>$95.000</p>
-        <button>+</button>
-      </div>
 
-      <div class="swiper-slide producto">
-        <div class="imagen">
-          <img src="../assets/TiendaCarruselProductosDestacados/2.png" alt="Corset morado y celeste con vuelos">
+        <div class="swiper-slide producto">
+          <div class="imagen">
+            <img src="../assets/TiendaCarruselProductosDestacados/2.png" alt="Corset Coni - Corset morado y celeste con vuelos decorativos">
+          </div>
+          <p>CORSET CONI<br>$25.000</p>
+          <button aria-label="Agregar Corset Coni al carrito">+</button>
         </div>
-        <p>CORSET CONI<br>$25.000</p>
-        <button>+</button>
-      </div>
 
-      <div class="swiper-slide producto">
-        <div class="imagen">
-          <img src="../assets/TiendaCarruselProductosDestacados/5.jpg" alt="Jean estampado animal print vaca con brillos">
+        <div class="swiper-slide producto">
+          <div class="imagen">
+            <img src="../assets/TiendaCarruselProductosDestacados/5.jpg" alt="Jean Roma - Jean con estampado animal print vaca y detalles de brillos">
+          </div>
+          <p>JEAN ROMA<br>$35.000</p>
+          <button aria-label="Agregar Jean Roma al carrito">+</button>
         </div>
-        <p>JEAN ROMA<br>$35.000</p>
-        <button>+</button>
-      </div>
 
-      <div class="swiper-slide producto">
-        <div class="imagen">
-          <img src="../assets/TiendaCarruselProductosDestacados/3.png" alt="Botas negras de taco aguja arrugadas">
+        <div class="swiper-slide producto">
+          <div class="imagen">
+            <img src="../assets/TiendaCarruselProductosDestacados/3.png" alt="Botas Loli - Botas negras de taco aguja con efecto arrugado">
+          </div>
+          <p>BOTAS LOLI<br>$78.000</p>
+          <button aria-label="Agregar Botas Loli al carrito">+</button>
         </div>
-        <p>BOTAS LOLI<br>$78.000</p>
-        <button>+</button>
-      </div>
 
-      <div class="swiper-slide producto">
-        <div class="imagen">
-          <img src="../assets/TiendaCarruselProductosDestacados/4.png" alt="Top de corbata color beige">
+        <div class="swiper-slide producto">
+          <div class="imagen">
+            <img src="../assets/TiendaCarruselProductosDestacados/4.png" alt="Top Tara - Top estilo corbata color beige minimalista">
+          </div>
+          <p>TOP TARA<br>$20.000</p>
+          <button aria-label="Agregar Top Tara al carrito">+</button>
         </div>
-        <p>TOP TARA<br>$20.000</p>
-        <button>+</button>
       </div>
-
-     </div>
-     <div class="swiper-pagination"></div>
-     <div class="swiper-button-prev"></div>
-     <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev" aria-label="Producto anterior"></div>
+      <div class="swiper-button-next" aria-label="Producto siguiente"></div>
     </div>
   </section>
 
@@ -90,67 +91,65 @@
   <section id="categorias">
     <h2>CATEGORÍAS</h2>
     <div class="categorias">
-
-      <a href="zapatos.html" class="card">
+      <a href="zapatos.html" class="card" aria-label="Ver categoría Zapatos">
         <span class="card-text">ZAPATOS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/1.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/1.png');" role="img" aria-label="Imagen de categoría Zapatos"></div>
       </a>
 
-      <a href="tops.html" class="card">
+      <a href="tops.html" class="card" aria-label="Ver categoría Tops">
         <span class="card-text">TOPS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/5.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/5.png');" role="img" aria-label="Imagen de categoría Tops"></div>
       </a> 
 
-      <a href="tejidos.html" class="card">
+      <a href="tejidos.html" class="card" aria-label="Ver categoría Tejidos">
         <span class="card-text">TEJIDOS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/7.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/7.png');" role="img" aria-label="Imagen de categoría Tejidos"></div>
       </a>
 
-      <a href="shorts.html" class="card">
+      <a href="shorts.html" class="card" aria-label="Ver categoría Shorts">
         <span class="card-text">SHORTS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/2.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/2.png');" role="img" aria-label="Imagen de categoría Shorts"></div>
       </a>
 
-      <a href="corsets.html" class="card">
+      <a href="corsets.html" class="card" aria-label="Ver categoría Corsets">
         <span class="card-text">CORSETS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/4.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/4.png');" role="img" aria-label="Imagen de categoría Corsets"></div>
       </a>
 
-      <a href="vestidos.html" class="card">
+      <a href="vestidos.html" class="card" aria-label="Ver categoría Vestidos">
         <span class="card-text">VESTIDOS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/10.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/10.png');" role="img" aria-label="Imagen de categoría Vestidos"></div>
       </a>
 
-      <a href="gorros.html" class="card">
+      <a href="gorros.html" class="card" aria-label="Ver categoría Gorros">
         <span class="card-text">GORROS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/11.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/11.png');" role="img" aria-label="Imagen de categoría Gorros"></div>
       </a>
 
-      <a href="abrigos.html" class="card">
+      <a href="abrigos.html" class="card" aria-label="Ver categoría Abrigos">
         <span class="card-text">ABRIGOS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/12.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/12.png');" role="img" aria-label="Imagen de categoría Abrigos"></div>
       </a>
 
-      <a href="buzos.html" class="card">
+      <a href="buzos.html" class="card" aria-label="Ver categoría Buzos">
         <span class="card-text">BUZOS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/6.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/6.png');" role="img" aria-label="Imagen de categoría Buzos"></div>
       </a>
 
-      <a href="camisas.html" class="card">
+      <a href="camisas.html" class="card" aria-label="Ver categoría Camisas">
         <span class="card-text">CAMISAS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/3.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/3.png');" role="img" aria-label="Imagen de categoría Camisas"></div>
       </a>
 
-      <a href="polleras.html" class="card">
+      <a href="polleras.html" class="card" aria-label="Ver categoría Faldas">
         <span class="card-text">FALDAS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/9.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/9.png');" role="img" aria-label="Imagen de categoría Faldas"></div>
       </a>
 
-      <a href="bolsos.html" class="card">
+      <a href="bolsos.html" class="card" aria-label="Ver categoría Bolsos">
         <span class="card-text">BOLSOS</span>
-        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/8.png');"></div>
+        <div class="card-img" style="background-image: url('../assets/TiendaCategorias/8.png');" role="img" aria-label="Imagen de categoría Bolsos"></div>
       </a>
-
     </div>
   </section>
 
@@ -166,34 +165,14 @@
     </div>
 
     <div class="redes">
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.productos', {
-      slidesPerView: 1.2,
-      centeredSlides: true,
-      spaceBetween: 10,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        480: { slidesPerView: 1, spaceBetween: 15},
-        768: { slidesPerView: 2.5, spaceBetween: 20 },
-        1024: { slidesPerView: 3, spaceBetween: 10 },
-      },
-    });
-  </script>
+  <script src="../js/tienda.js"></script>
 </body>
 </html>
